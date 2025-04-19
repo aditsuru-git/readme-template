@@ -89,8 +89,14 @@
 			"message": "Is the project a team project?",
 			"initialValue": "No",
 			"options": [
-				{ "value": "Yes", "label": "Yes" },
-				{ "value": "No", "label": "No" }
+				{
+					"value": "https://github.com/aditsuru-git/readme-template/blob/main/assets/footer-team.png?raw=true",
+					"label": "Yes"
+				},
+				{
+					"value": "https://github.com/aditsuru-git/readme-template/blob/main/assets/footer.png?raw=true",
+					"label": "No"
+				}
 			]
 		}
 	]
