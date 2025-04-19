@@ -1,0 +1,97 @@
+{
+	"prompts": [
+		{
+			"name": "projectName",
+			"type": "text",
+			"message": "Project Name:",
+			"required": true,
+			"placeholder": "My Awesome Project"
+		},
+		{
+			"name": "projectDescription",
+			"type": "text",
+			"message": "Short project description (one line):",
+			"required": true
+		},
+
+		{
+			"name": "repoName",
+			"type": "text",
+			"message": "GitHub repository name:",
+			"required": true,
+			"placeholder": "e.g., my-awesome-project"
+		},
+
+		{
+			"name": "includeLicense",
+			"type": "confirm",
+			"message": "Include a License section?",
+			"initialValue": true
+		},
+		{
+			"name": "license",
+			"type": "select",
+			"message": "Choose a license:",
+			"initialValue": "MIT",
+			"options": ["MIT", "Apache 2.0", "GPL v3", "BSD 3-Clause", "Unlicense", "Other"],
+			"dependsOn": "includeLicense",
+			"showIf": true
+		},
+		{
+			"name": "includeBuiltWith",
+			"type": "confirm",
+			"message": "Include 'Built With' section?",
+			"initialValue": true
+		},
+		{
+			"name": "builtWithBadges",
+			"type": "multiselect",
+			"message": "Select primary technologies used (will be formatted as badges):",
+			"dependsOn": "includeBuiltWith",
+			"showIf": true,
+			"options": [
+				{ "value": "[![JavaScript][JavaScript-badge]][JavaScript-url]", "label": "JavaScript" },
+				{ "value": "[![TypeScript][TypeScript-badge]][TypeScript-url]", "label": "TypeScript" },
+				{ "value": "[![Python][Python-badge]][Python-url]", "label": "Python" },
+				{ "value": "[![React][React-badge]][React-url]", "label": "React" },
+				{ "value": "[![Vue.js][Vue-badge]][Vue-url]", "label": "Vue.js" },
+				{ "value": "[![Angular][Angular-badge]][Angular-url]", "label": "Angular" },
+				{ "value": "[![Node.js][Node-badge]][Node-url]", "label": "Node.js" },
+				{ "value": "[![Java][Java-badge]][Java-url]", "label": "Java" },
+				{ "value": "[![Go][Go-badge]][Go-url]", "label": "Go" },
+				{ "value": "[![Rust][Rust-badge]][Rust-url]", "label": "Rust" },
+				{ "value": "[![Docker][Docker-badge]][Docker-url]", "label": "Docker" },
+				{ "value": "[![AWS][AWS-badge]][AWS-url]", "label": "AWS" },
+				{ "value": "[![Firebase][Firebase-badge]][Firebase-url]", "label": "Firebase" },
+				{ "value": "[![MongoDB][MongoDB-badge]][MongoDB-url]", "label": "MongoDB" },
+				{ "value": "[![PostgreSQL][PostgreSQL-badge]][PostgreSQL-url]", "label": "PostgreSQL" },
+				{ "value": "[![MySQL][MySQL-badge]][MySQL-url]", "label": "MySQL" }
+			],
+			"required": false,
+			"initialValue": [],
+			"separator": "\n"
+		},
+		{
+			"name": "includeAcknowledgments",
+			"type": "confirm",
+			"message": "Include an Acknowledgments section placeholder?",
+			"initialValue": false
+		},
+		{
+			"name": "learningProject",
+			"type": "confirm",
+			"message": "Is the project for learning?",
+			"initialValue": true
+		},
+		{
+			"name": "footerImg",
+			"type": "select",
+			"message": "Is the project a team project?",
+			"initialValue": "No",
+			"options": [
+				{ "value": "Yes", "label": "Yes" },
+				{ "value": "No", "label": "No" }
+			]
+		}
+	]
+}
